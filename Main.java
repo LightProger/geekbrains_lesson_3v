@@ -9,17 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Ваша задача угадать число от 0 до 10");
-        int range = 10;
-        int number = (int) (Math.random() * range);
-        playLevel(range, number);
+        System.out.println("Ваша задача угадать число.");
+        for(int i = 10; i <= 30; i += 10) playLevel(i);
         scanner.close();
     }
 
-    private static void playLevel(int range, int number) {
-
+    private static void playLevel(int range) {
+        int number = (int) (Math.random() * range);
         while (true) {
-            System.out.println("Введите число: ");
+            System.out.println("Угадайте число от 0 до " + range);
             int input_number = scanner.nextInt();
             if (input_number == number) {
                 System.out.println("Поздравляем! Вы угадали!!");
